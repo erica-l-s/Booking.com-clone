@@ -42,8 +42,8 @@ export const Header = () => {
                     <Link href="/" className='-m-1.5 p-1.5'>
                         <span className='sr-only'>Booking.com</span>
                         <img
-                            className='h-6 w-auto'
-                            src='https://upload.wikimedia.org/wikipedia/commons/5/50/Booking.com_Logo_Grey.svg'
+                            className='h-12 w-auto'
+                            src='https://static1.squarespace.com/static/5bde0f00c3c16aa95581e2e2/62b4cb1add9d257dd43bb03d/62b653fedc7c895918d19b24/1656116254983/booking+logo+white.png?format=1500w'
                             alt=''
                         />
                     </Link>
@@ -140,8 +140,8 @@ export const Header = () => {
                         <a href='#' className='-m-1.5 p-1.5'>
                             <span className='sr-only'>Booking.com</span>
                             <img
-                                className='h-4 w-auto'
-                                src='https://upload.wikimedia.org/wikipedia/commons/5/50/Booking.com_Logo_Grey.svg'
+                                className='h-8 w-auto'
+                                src='https://static1.squarespace.com/static/5bde0f00c3c16aa95581e2e2/62b4cb1add9d257dd43bb03d/62b653fedc7c895918d19b24/1656116254983/booking+logo+white.png?format=1500w'
                                 alt=''
                             />
                         </a>
@@ -181,6 +181,16 @@ export const Header = () => {
                                     )}
 
                                 </Disclosure>
+                                <a href='#' className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leanding-7 text-white hover:bg-blue-800'>Flights</a>
+                                <a href='#' className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leanding-7 text-white hover:bg-blue-800'>Car Rentals</a>
+                                <a href='#' className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leanding-7 text-white hover:bg-blue-800'>Attractions</a>
+                                <a href='#' className='-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leanding-7 text-white hover:bg-blue-800'>Flight + Hotel</a>
+
+                            </div>
+                            <div className='py-6'>
+                                <a href='#' className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leanding-7 text-white hover:bg-blue-800'>
+                                    Log in
+                                </a>
                             </div>
                         </div>
                     </div>
