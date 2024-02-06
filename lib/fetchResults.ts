@@ -1,7 +1,6 @@
 import { SearchParams } from "@/app/search/page";
 import { Result } from "@/typings";
 
-
 export async function fetchResults(searchParams: SearchParams) {
   const username = process.env.OXYLABS_USERNAME;
   const password = process.env.OXYLABS_PASSWORD;
@@ -14,7 +13,9 @@ export async function fetchResults(searchParams: SearchParams) {
 
     if (typeof value === "string") {
       url.searchParams.append(key, value);
+
     }
+
   });
 
   const body = {
@@ -71,8 +72,7 @@ export async function fetchResults(searchParams: SearchParams) {
             _fns: [
               {
                 _fn: "xpath_one",
-                _args: [
-                  `.//span[contains(@class, 'f6431b446c fbfd7c1165 e84eb96b1f')]/text()`,
+                _args: [`.//span[contains(@class, 'f6431b446c fbfd7c1165 e84eb96b1f')]/text()`,
                 ],
               },
             ],
@@ -122,9 +122,9 @@ export async function fetchResults(searchParams: SearchParams) {
             _args: [".//h1/text()"],
           },
         ],
-      }
-    }
-  }
+      },
+    },
+  };
 
   const response = await fetch("https://realtime.oxylabs.io/v1/queries", {
     method: "POST",
@@ -133,16 +133,18 @@ export async function fetchResults(searchParams: SearchParams) {
       revalidate: 60 * 60,
     },
     headers: {
-      "Content-Type": "application/json",
-      Authorization: "Basic" + Buffer.from(`${username}:${password}`).toString("base64"),
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + Buffer.from(`${username}:${password}`).toString('base64'),
     }
-  }).then((response) => response.json())
-    .then((data) => {
-      if (data.results.length === 0) return;
-      const result: Result = data.results[0]
 
-      return result;
-    })
-    .catch((err) => console.log(err))
+  }).then((response) => response.json())
+  .then((data) => {
+    if (data.results.length === 0) return;
+    const result: Result = data.results[0]
+
+    return result;
+  })
+    .catch((err) => console.log(err));
+
   return response;
 }

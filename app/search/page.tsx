@@ -3,8 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
-  searchParams: SearchParams;
+searchParams: SearchParams;
 };
+
 
 export type SearchParams = {
   url: URL;
@@ -21,7 +22,8 @@ async function SearchPage({ searchParams }: Props) {
   const results = await fetchResults(searchParams);
 
   if (!results) return <div>No results...</div>;
-
+  
+    
   return (
     <section>
       <div className="mx-auto max-w-7xl p-6 lg:px-8">

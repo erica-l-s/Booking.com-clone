@@ -1,4 +1,5 @@
 import {Skeleton} from "@/components/ui/skeleton"
+
 function LoadingResults() {
   return (
     <section>
